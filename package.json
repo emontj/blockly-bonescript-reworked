@@ -1,0 +1,22 @@
+{
+  "name": "beagle-bone-black-blocks",
+  "version": "1.0.0",
+  "description": "Blockly integrated with bonescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emontj/blockly-bonescript-reworked.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emontj/blockly-bonescript-reworked/issues"
+  },
+  "homepage": "https://github.com/emontj/blockly-bonescript-reworked#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
