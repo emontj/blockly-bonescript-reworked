@@ -43,7 +43,7 @@ var block = null;
 function start() {
   var toolbox = document.getElementById('toolbox');
   Blockly.inject(document.getElementById('blocklyDiv'),
-                 {'rtl': rtl, path: '../', toolbox: toolbox});
+                 {'rtl': rtl, path: 'blockly/static/', toolbox: toolbox});
 }
 
 function toXml() {

@@ -13,8 +13,6 @@ app.get("/", (req, res) => {
         if (err) {
             console.error(err);
             res.status(err.status).end();
-        } else {
-            console.log('File sent successfully');
         }
     });
 });
