@@ -82,6 +82,37 @@ function airstrike(n) {
     block.render();
   }
 }
+
+function sendPostRequest(url, payloadName, payload) {
+  const requestBody = {};
+  requestBody[payloadName] = payload;
+
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(requestBody)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('POST request successful with JSON response:', data);
+  })
+  .catch(error => {
+    console.error('Error sending POST request:', error);
+  });
+}
+
+
+function sendCode() {
+  var code = document.getElementById('importExport');
+  sendPostRequest("/run-code", "code", code.value);
+}
 </script>
 
 <style>
@@ -374,17 +405,18 @@ h1 {
     &nbsp;
     <input type="button" value="Import from XML" onclick="fromXml()">
     <br>
-    <input type="button" value="Generate JavaScript" onclick="toCode('JavaScript')">
+    <input type="button" value="Generate BoneScript" onclick="toCode('JavaScript')">
     &nbsp;
-    <input type="button" value="Generate Python" onclick="toCode('Python')">
+    <input type="button" value="Execute BoneScript" onclick="sendCode()">
+    <!-- <input type="button" value="Generate Python" onclick="toCode('Python')"> -->
     <br>
     <textarea id="importExport" style="width: 26%; height: 12em"></textarea>
   </p>
   <hr>
 
-  <p>
+  <!-- <p>
     Stress test with an <input type="button" value="Airstrike!" onclick="airstrike(100)">
-  </p>
+  </p> -->
 
   </form>
 
