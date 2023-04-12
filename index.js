@@ -2,9 +2,22 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const { exec } = require('child_process');
+const path = require('path');
 
-app.use(express.static('blockly'));
+app.use("/blockly", express.static(path.join(__dirname, 'blockly')));
 app.use(express.json());
+
+app.get("/", (req, res) => {
+    // res.sendFile(__dirname + '/blockly/static/tests/playground.html', function(err) {
+    res.sendFile(__dirname + '/playground.html', function(err) {
+        if (err) {
+            console.error(err);
+            res.status(err.status).end();
+        } else {
+            console.log('File sent successfully');
+        }
+    });
+});
 
 app.post('/run-code', (req, res) => {
     const code = req.body.code;
