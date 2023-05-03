@@ -21,7 +21,7 @@ You may need to install node js on the BeagleBone if it is not already installed
 Navigate into the repository folder on the BeagleBone and run:
   
   ```
-  node ./server.js
+  node ./index.js
   ```
 
 You may face some errors for missing dependencies.  These can usually be fixed with:
