@@ -308,3 +308,39 @@ Blockly.Language.bonescript_analogread = {
   contextMenuType_: 'variables_get',
   customContextMenu: Blockly.Language.variables_get.customContextMenu
 };
+
+// Custom
+// Blockly.Language.bonescript_custom = {
+//   helpUrl: 'http://example.com/your_block_help_url/',
+//   init: function() {
+//     this.setColour(210);
+//     this.appendDummyInput()
+//         .appendTitle("Custom Block");
+//     this.appendValueInput("input_value")
+//         .setCheck("Number");
+//     this.setInputsInline(true);
+//     this.setPreviousStatement(true);
+//     this.setNextStatement(true);
+//     this.setTooltip('Custom block tooltip');
+//   }
+// };
+
+Blockly.Language.bonescript_led_toggle = {
+  helpUrl: 'http://example.com/your_block_help_url/',
+  init: function() {
+    this.setColour(210);
+    this.appendDummyInput()
+        .appendTitle("LED Toggle");
+    this.appendValueInput("pin")
+        .setCheck("Pin")
+        .appendTitle("Pin");
+    this.appendDummyInput()
+        .appendTitle("State")
+        .appendTitle(new Blockly.FieldDropdown([["ON", "1"], ["OFF", "0"]]), "state");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip('Toggle LED on or off');
+  }
+};
+

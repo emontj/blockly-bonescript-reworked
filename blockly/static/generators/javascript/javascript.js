@@ -53,3 +53,8 @@ Blockly.JavaScript.javascript_consolelog = function() {
   return code;
 };
 
+Blockly.JavaScript.javascript_superlog = function() {
+  var value_log = Blockly.JavaScript.valueToCode(this, 'log', Blockly.JavaScript.ORDER_COMMA) || null;
+  var code = 'console.log(' + value_log + ');\n';
+  return code;
+};

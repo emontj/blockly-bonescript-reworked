@@ -149,3 +149,25 @@ function uniquifyLocal(block, code, varTemp, varName) {
   return code;
 }
 
+// Custom test
+// Blockly.JavaScript.bonescript_custom = function() {
+//   var value_input = Blockly.JavaScript.valueToCode(this, 'input_value', Blockly.JavaScript.ORDER_ATOMIC);
+//   var code = 'console.log(' + value_input + ');\n';
+//   return code;
+// };
+
+Blockly.JavaScript.bonescript_led_toggle = function() {
+  var value_pin = Blockly.JavaScript.valueToCode(this, 'pin', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_state = this.getTitleValue('state');
+  var on_off = Blockly.JavaScript.bonescript_var()
+
+  if (dropdown_state == 1) {
+    on_off = on_off + ".HIGH";
+  } else if (dropdown_state == 0) {
+    on_off = on_off + ".LOW";
+  }
+
+  var code = Blockly.JavaScript.bonescript_var() + '.digitalWrite(' + value_pin + ', ' + on_off + ');\n';
+  return code;
+};
+
