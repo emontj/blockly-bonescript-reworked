@@ -81,7 +81,7 @@ Obviously, replace your values and block names.  The type value is important, as
 For the JavaScript definition, go to static/language/common/bonescript.js and add the following code, again replacing values where needed.  **It is important that the bonescript_led_toggle part matches the "type=" value in the XML!**
   
 ```
-  Blockly.Language.bonescript_led_toggle = {
+ Blockly.Language.bonescript_led_toggle = {
     helpUrl: 'http://example.com/your_block_help_url/',
     init: function() {
       this.setColour(210);
